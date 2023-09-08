@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/contactsFragment">
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.example.cgtaska.presentation.fragement.ContactsListFragment"
+        android:label="fragment_users"
+        tools:layout="@layout/fragment_contactslist">
+        <action
+            android:id="@+id/action_usersFragment_to_contactsDetailsFragment"
+            app:destination="@id/contactsDetailsFragment" />
+        <action
+            android:id="@+id/action_contactsFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_contactsFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactsDetailsFragment"
+        android:name="com.example.cgtaska.presentation.ui.fragement.ContactsDetailsFragment"
+        android:label="fragment_contacts_details"
+        tools:layout="@layout/fragment_contacts_details">
+
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_contactsDetailsFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.cgtaska.presentation.ui.fragement.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.cgtaska.presentation.ui.fragement.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.example.cgtaska.presentation.fragement.AddContactFragment"
+        android:label="fragment_add_contact"
+        tools:layout="@layout/fragment_add_contact">
+        <action
+            android:id="@+id/action_addContactFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.cgtaska.presentation.fragement.UpdateContactFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update_contact">
+
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_updateFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+    </fragment>
+
+</navigation>
