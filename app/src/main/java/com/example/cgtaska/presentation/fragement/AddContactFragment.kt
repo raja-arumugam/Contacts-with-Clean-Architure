@@ -44,8 +44,6 @@ class AddContactFragment : Fragment(), Injectable {
     private var userImage: Uri? = null
     private var pickMedia: ActivityResultLauncher<PickVisualMediaRequest>? = null
 
-//    private var galleryActivityResultLauncher: ActivityResultLauncher<Intent>? = null
-
     private val validateHelper: ValidateHelper by lazy { ValidateHelper(requireContext()) }
 
     override fun onCreateView(
@@ -84,23 +82,6 @@ class AddContactFragment : Fragment(), Injectable {
                     userImage = uri
                 }
             }
-
-        /*binding.ivUser.setOnClickListener {
-            val galleryIntent =
-                Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            galleryActivityResultLauncher?.launch(galleryIntent)
-        }
-
-        galleryActivityResultLauncher =
-            registerForActivityResult(
-                ActivityResultContracts.StartActivityForResult()
-            ) { result ->
-                if (result.resultCode === Activity.RESULT_OK) {
-                    val imageUri: Uri? = result.data?.data
-                    binding.ivUser.setImageURI(imageUri)
-                    userImage = imageUri
-                }
-            }*/
 
         getAddContactResponse()
         return binding.root

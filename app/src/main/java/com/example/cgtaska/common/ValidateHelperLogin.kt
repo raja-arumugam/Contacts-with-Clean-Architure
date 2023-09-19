@@ -2,6 +2,7 @@ package com.example.cgtaska.common
 
 import android.content.Context
 import android.widget.Toast
+import com.example.cgtaska.R
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -9,7 +10,11 @@ class ValidateHelperLogin(private val context: Context) {
 
     fun validateEmptyName(name: String): Boolean {
         return if (name.isEmpty()) {
-            Toast.makeText(context, "Please enter your first name", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                context.resources.getString(R.string.enter_your_firstName),
+                Toast.LENGTH_SHORT
+            ).show()
             false
         } else {
             true
@@ -18,7 +23,11 @@ class ValidateHelperLogin(private val context: Context) {
 
     fun validateName(name: String): Boolean {
         return if (name.length < 8) {
-            Toast.makeText(context, "Username should be unto 8 digits", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                context.resources.getString(R.string.username_should_8_digits),
+                Toast.LENGTH_SHORT
+            ).show()
             false
         } else {
             true
@@ -27,7 +36,11 @@ class ValidateHelperLogin(private val context: Context) {
 
     fun validateEmptyPassword(password: String): Boolean {
         return if (password.isEmpty()) {
-            Toast.makeText(context, "Please enter your password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                context.resources.getString(R.string.enter_your_password),
+                Toast.LENGTH_SHORT
+            ).show()
             false
         } else {
             true
@@ -36,7 +49,11 @@ class ValidateHelperLogin(private val context: Context) {
 
     fun validatePassword(password: String): Boolean {
         return if (password.length < 8) {
-            Toast.makeText(context, "Password should be unto 8 digits", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                context.resources.getString(R.string.password_should_8_digits),
+                Toast.LENGTH_SHORT
+            ).show()
             false
         } else {
             true

@@ -1,7 +1,6 @@
 package com.example.cgtaska.presentation.fragement
 
-import android.app.Activity
-import android.content.Intent
+
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -39,7 +38,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-
 @Suppress("DEPRECATED_IDENTITY_EQUALS")
 class UpdateContactFragment : Fragment(), Injectable {
 
@@ -51,8 +49,6 @@ class UpdateContactFragment : Fragment(), Injectable {
 
     private var userImage: Uri? = null
     private var pickMedia: ActivityResultLauncher<PickVisualMediaRequest>? = null
-
-//    private var galleryActivityResultLauncher: ActivityResultLauncher<Intent>? = null
 
     private val validateHelper: ValidateHelper by lazy { ValidateHelper(requireContext()) }
     private var contactID: Int = 0
@@ -91,24 +87,6 @@ class UpdateContactFragment : Fragment(), Injectable {
                     userImage = uri
                 }
             }
-
-        /* binding.ivUser.setOnClickListener {
-
-             val galleryIntent =
-                 Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-             galleryActivityResultLauncher?.launch(galleryIntent)
-         }
-
-         galleryActivityResultLauncher =
-             registerForActivityResult(
-                 ActivityResultContracts.StartActivityForResult()
-             ) { result ->
-                 if (result.resultCode === Activity.RESULT_OK) {
-                     val imageUri: Uri? = result.data?.data
-                     binding.ivUser.setImageURI(imageUri)
-                     userImage = imageUri
-                 }
-             }*/
 
         binding.btAddUpdate.setOnClickListener {
             updateUser(userImage)
@@ -193,7 +171,7 @@ class UpdateContactFragment : Fragment(), Injectable {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
 
-                mViewModel.contactState.collectLatest {
+                mViewModel.contactState.collect() {
                     when (it) {
                         is ContactState.Error -> {
                             with(binding) {

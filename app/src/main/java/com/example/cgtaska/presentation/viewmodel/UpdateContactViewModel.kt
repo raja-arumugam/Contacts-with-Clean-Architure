@@ -1,5 +1,6 @@
 package com.example.cgtaska.presentation.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cgtaska.domain.model.ContactList
