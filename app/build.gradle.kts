@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cgtaska"
+    namespace = "com.example.contacts"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.cgtaska"
+        applicationId = "com.example.contacts"
         minSdk = 23
         targetSdk = 33
         versionCode = 1

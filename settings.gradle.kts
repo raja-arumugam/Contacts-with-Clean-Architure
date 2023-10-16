@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CG Task A"
+rootProject.name = "Contacts"
 include(":app")

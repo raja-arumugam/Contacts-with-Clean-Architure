@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/contactsFragment"
-        android:name="com.example.cgtaska.presentation.fragement.ContactsListFragment"
+        android:name="com.example.contacts.presentation.fragement.ContactsListFragment"
         android:label="fragment_users"
         tools:layout="@layout/fragment_contactslist">
         <action
@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/contactsDetailsFragment"
-        android:name="com.example.cgtaska.presentation.ui.fragement.ContactsDetailsFragment"
+        android:name="com.example.contacts.presentation.ui.fragement.ContactsDetailsFragment"
         android:label="fragment_contacts_details"
         tools:layout="@layout/fragment_contacts_details">
 
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.cgtaska.presentation.ui.fragement.SplashFragment"
+        android:name="com.example.contacts.presentation.ui.fragement.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cgtaska.presentation.ui.fragement.LoginFragment"
+        android:name="com.example.contacts.presentation.ui.fragement.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -63,7 +63,7 @@
 
     <fragment
         android:id="@+id/addContactFragment"
-        android:name="com.example.cgtaska.presentation.fragement.AddContactFragment"
+        android:name="com.example.contacts.presentation.fragement.AddContactFragment"
         android:label="fragment_add_contact"
         tools:layout="@layout/fragment_add_contact">
         <action
@@ -73,7 +73,7 @@
 
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.example.cgtaska.presentation.fragement.UpdateContactFragment"
+        android:name="com.example.contacts.presentation.fragement.UpdateContactFragment"
         android:label="fragment_update"
         tools:layout="@layout/fragment_update_contact">
 
